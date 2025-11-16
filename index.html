@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>VO₂ Max Extractor</title>
-  <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#0b3d2e" />
 </head>
 <body>
@@ -16,24 +16,23 @@
 
   <main>
     <div class="card">
-     <input type="file" id="fileInput" accept=".fit,.zip" class="file-button" />
+      <input type="file" id="fileInput" accept=".fit,.zip" class="file-button" />
       <div id="status" class="status">No file selected.</div>
-
       <div id="result" class="result"></div>
 
       <details id="diagnostics">
         <summary>Diagnostics</summary>
         <pre id="diagPre"></pre>
       </details>
+
+      <small>Works best in Safari on iPhone. Firefox/Edge may have limited file picker support.</small>
     </div>
   </main>
 
   <footer>
-    <small>Powered by a tiny FastAPI service.</small>
+    <small>Powered by FastAPI on Render</small>
   </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
-
