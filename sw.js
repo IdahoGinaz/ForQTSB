@@ -21,7 +21,7 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   const { request } = event;
-  if (request.method !== "GET") return; // don't cache POST uploads
+  if (request.method !== "GET") return;
   event.respondWith(
     caches.match(request).then((cached) => cached || fetch(request))
   );
