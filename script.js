@@ -1,10 +1,30 @@
 const API_URL = "https://forqtsb.onrender.com/upload";
+const HEALTH_URL = "https://forqtsb.onrender.com/";
 
 const fileInput = document.getElementById("fileInput");
 const statusEl = document.getElementById("status");
 const resultEl = document.getElementById("result");
 const diagPre = document.getElementById("diagPre");
 
+// Check if backend is awake
+async function checkBackendReady() {
+  statusEl.textContent = "Checking server status…";
+  try {
+    const res = await fetch(HEALTH_URL);
+    const data = await res.json();
+    if (data.status === "ok") {
+      statusEl.textContent = "Server is ready. You can upload a file.";
+      fileInput.disabled = false;
+    } else {
+      statusEl.textContent = "Server responded but not ready.";
+    }
+  } catch (err) {
+    statusEl.textContent = "Waking up the server… please wait";
+    setTimeout(checkBackendReady, 5000); // retry after 5s
+  }
+}
+
+checkBackendReady();
 fileInput.addEventListener("change", async (e) => {
   const file = e.target.files[0];
   if (!file) {
@@ -63,3 +83,4 @@ fileInput.addEventListener("change", async (e) => {
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./sw.js").catch(() => {});
 }
+
