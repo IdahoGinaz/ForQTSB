@@ -1,0 +1,84 @@
+:root {
+  --bg: #0e1116;
+  --card: #12161e;
+  --text: #e8edf5;
+  --muted: #97a5b5;
+  --accent: #0b3d2e; /* deep green */
+  --accent2: #1e6f5c;
+  --border: #273042;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #0b0d12 60%, #0a0d10);
+  color: var(--text);
+}
+
+header, footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 { margin: 0.5rem 0; }
+
+main {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 900px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.button {
+  display: inline-block;
+  background: var(--accent2);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+#fileInput {
+  position: absolute;
+  left: -9999px;
+  width: 1px; height: 1px;
+  opacity: 0;
+}
+
+.status {
+  color: var(--muted);
+  margin: 0.5rem 0 1rem;
+}
+
+.result {
+  font-size: 1.25rem;
+  margin: 0.5rem 0 1rem;
+}
+
+details {
+  margin-top: 1rem;
+}
+
+pre {
+  background: #0b0f16;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  overflow: auto;
+  max-height: 40vh;
+}

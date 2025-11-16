@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VO₂ Max Extractor</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#0b3d2e" />
+</head>
+<body>
+  <header>
+    <h1>VO₂ Max Extractor</h1>
+    <p>Upload a FIT or ZIP file to see your VO₂ max.</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <label for="fileInput" class="button">Choose FIT/ZIP file</label>
+      <input type="file" id="fileInput" accept=".fit,.zip" />
+      <div id="status" class="status">No file selected.</div>
+
+      <div id="result" class="result"></div>
+
+      <details id="diagnostics">
+        <summary>Diagnostics</summary>
+        <pre id="diagPre"></pre>
+      </details>
+    </div>
+  </main>
+
+  <footer>
+    <small>Powered by a tiny FastAPI service.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
