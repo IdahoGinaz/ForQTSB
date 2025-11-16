@@ -8,10 +8,14 @@
   --border: #273042;
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   background: linear-gradient(180deg, var(--bg), #0b0d12 60%, #0a0d10);
   color: var(--text);
@@ -21,9 +25,12 @@ header, footer {
   max-width: 900px;
   margin: 0 auto;
   padding: 1rem;
+  text-align: center;
 }
 
-h1 { margin: 0.5rem 0; }
+h1 {
+  margin: 0.5rem 0;
+}
 
 main {
   display: grid;
@@ -38,26 +45,20 @@ main {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-.button {
+.file-button {
   display: inline-block;
   background: var(--accent2);
   color: white;
   padding: 0.75rem 1rem;
   border-radius: 8px;
   cursor: pointer;
-  user-select: none;
-  text-align: center;
+  font-size: 1rem;
+  border: none;
+  appearance: none;
   margin-bottom: 0.5rem;
-}
-
-#fileInput {
-  position: absolute;
-  left: -9999px;
-  width: 1px; height: 1px;
-  opacity: 0;
 }
 
 .status {
@@ -81,4 +82,13 @@ pre {
   padding: 0.75rem;
   overflow: auto;
   max-height: 40vh;
+  color: #d0e0f0;
+  font-size: 0.9rem;
+}
+
+small {
+  display: block;
+  margin-top: 1rem;
+  color: var(--muted);
+  text-align: center;
 }
