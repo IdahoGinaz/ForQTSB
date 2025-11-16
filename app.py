@@ -2,6 +2,15 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import JSONResponse
 from fitparse import FitFile
 import zipfile, io, os
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or restrict to your GitHub Pages domain
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = FastAPI()
 
