@@ -59,6 +59,7 @@ main {
   border: none;
   appearance: none;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .status {
@@ -92,3 +93,4 @@ small {
   color: var(--muted);
   text-align: center;
 }
+
