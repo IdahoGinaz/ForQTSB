@@ -1,4 +1,3 @@
-// Replace with your live Render URL:
 const API_URL = "https://forqtsb.onrender.com/upload";
 
 const fileInput = document.getElementById("fileInput");
@@ -6,15 +5,13 @@ const statusEl = document.getElementById("status");
 const resultEl = document.getElementById("result");
 const diagPre = document.getElementById("diagPre");
 
-// Improve tap-target on mobile: hide native input, use label-as-button
-
-
 fileInput.addEventListener("change", async (e) => {
   const file = e.target.files[0];
   if (!file) {
     statusEl.textContent = "No file selected.";
     return;
   }
+
   statusEl.textContent = `Selected: ${file.name}`;
   resultEl.textContent = "";
   diagPre.textContent = "";
@@ -30,7 +27,7 @@ fileInput.addEventListener("change", async (e) => {
       body: formData,
     });
 
-    const elapsed = (performance.now() - start) | 0; // ms
+    const elapsed = (performance.now() - start) | 0;
 
     let data = null;
     try {
@@ -62,7 +59,7 @@ fileInput.addEventListener("change", async (e) => {
     diagPre.textContent = String(err);
   }
 });
+
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./sw.js").catch(() => {});
 }
-
