@@ -16,8 +16,9 @@
 
   <main>
     <div class="card">
-      <input type="file" id="fileInput" accept=".fit,.zip" class="file-button" />
-      <div id="status" class="status">No file selected.</div>
+      <!-- File input is disabled until backend is ready -->
+      <input type="file" id="fileInput" accept=".fit,.zip" class="file-button" disabled />
+      <div id="status" class="status">Checking server status…</div>
       <div id="result" class="result"></div>
 
       <details id="diagnostics">
