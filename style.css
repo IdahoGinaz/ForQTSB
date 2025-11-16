@@ -3,7 +3,7 @@
   --card: #12161e;
   --text: #e8edf5;
   --muted: #97a5b5;
-  --accent: #0b3d2e; /* deep green */
+  --accent: #0b3d2e;
   --accent2: #1e6f5c;
   --border: #273042;
 }
@@ -26,10 +26,6 @@ header, footer {
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
-}
-
-h1 {
-  margin: 0.5rem 0;
 }
 
 main {
@@ -93,4 +89,3 @@ small {
   color: var(--muted);
   text-align: center;
 }
-
