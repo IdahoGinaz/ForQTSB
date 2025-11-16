@@ -7,9 +7,7 @@ const resultEl = document.getElementById("result");
 const diagPre = document.getElementById("diagPre");
 
 // Improve tap-target on mobile: hide native input, use label-as-button
-document.querySelector('label[for="fileInput"]').addEventListener('click', () => {
-  fileInput.click();
-});
+
 
 fileInput.addEventListener("change", async (e) => {
   const file = e.target.files[0];
@@ -67,3 +65,4 @@ fileInput.addEventListener("change", async (e) => {
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./sw.js").catch(() => {});
 }
+
